@@ -1,0 +1,87 @@
+.pricingpage {
+    .main {
+        .pricing {
+            margin-top: var(--height-header);
+            padding-top: 68px;
+            padding-bottom: 225px;
+
+            .textbox {
+                max-width: 50%;
+                margin: 0 auto;
+            }
+
+            &__detail {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 40px;
+                margin-bottom: 56px;
+
+                &--item {
+                    display: flex;
+                    align-items: center;
+                    gap: 24px;
+                }
+            }
+
+            &__list {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: var(--gutter);
+
+                &--item {
+                    background-color: var(--deep-blue);
+                    border-radius: 40px;
+                    padding: 48px 30px 42px 32px;
+
+                    .tag {
+                        height: 36px;
+                        padding: 0 14px;
+                        width: fit-content;
+                        border-radius: 1000px;
+                        background-color: var(--prim-cl);
+                        @include formatText(DM, var(--fz-text-tag), var(--lh-text-tag), var(--ls-text-tag));
+                        text-transform: uppercase;
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    .info {
+                        padding-top: 16px;
+                        padding-bottom: 40px;
+
+                        &__dollar {
+                            @include formatText(DB, 4.2rem, 5.5rem, 0px);
+                        }
+                    }
+
+                    .feature {
+                        &__list {
+                            li {
+                                padding-left: 22px;
+                                position: relative;
+
+                                &::before {
+                                    content: '';
+                                    width: 6px;
+                                    height: 6px;
+                                    background-color: var(--prim-cl);
+                                    border-radius: 50%;
+                                    position: absolute;
+                                    left: 0;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                }
+                            }
+                        }
+                    }
+
+                    .btn {
+                        margin-top: 54px;
+                        width: 100%;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,142 @@
+.loading {
+    display: none;
+}
+
+.btn {
+    @include formatText(DB, var(--fz-text-btn), var(--lh-text-btn), var(--ls-text-btn), var(--white-cl));
+    text-transform: uppercase;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    background-color: var(--prim-cl);
+    padding: 0 32px;
+    border-radius: 80px;
+    width: fit-content;
+    @include durationTime(0.3s);
+
+    &.--higher {
+        height: 70px;
+    }
+
+    &.--grey {
+        background-color: rgba(255, 255, 255, 0.10);
+    }
+
+    &.--white {
+        background-color: var(--white-cl);
+        color: var(--prim-cl);
+        margin-top: 32px;
+    }
+}
+
+.textbox {
+
+
+    &.--align-center {
+        text-align: center;
+
+        .heading {
+            margin-bottom: 13px;
+        }
+
+        .des {
+            text-align: center;
+        }
+    }
+
+    &.--align-left {
+        .heading {
+            margin-bottom: 20px;
+        }
+    }
+
+    &.--space-between {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .button {
+        display: flex;
+        gap: 28px;
+        margin-top: 42px;
+    }
+
+    .number {
+        @include formatText(DB, 2.8rem, 3rem, 0.28px);
+    }
+}
+
+.heading {
+    &.--lv1 {
+        @include formatText(DB, var(--fz-h1), var(--lh-h1), var(--ls-h1), var(--white-cl));
+        white-space: nowrap;
+    }
+
+    &.--lv2 {
+        @include formatText(DB, var(--fz-h2), var(--lh-h2), var(--ls-h2), var(--white-cl));
+    }
+
+    &.--lv3 {
+        @include formatText(DB, var(--fz-label), var(--lh-label), var(--ls-label));
+        text-transform: uppercase;
+    }
+
+    &.--lv5 {
+        @include formatText(DB, var(--fz-bd2), var(--lh-text-tag), 0.8px);
+        text-transform: uppercase;
+    }
+}
+
+.apps__lists {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 33px;
+}
+
+@media screen and (max-width: 834px) {
+    .apps__lists {
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}
+
+.features {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+
+        &--icon {
+            display: flex;
+        }
+    }
+}
+
+.author {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+
+    &__avatar {
+        aspect-ratio: 1/1;
+        overflow: hidden;
+        border-radius: 50%;
+
+        img {
+            @include images;
+        }
+    }
+
+    &__info {
+        &--address {
+            @include formatText(DR, var(--fz-bd2), var(--lh-text-tag), 0.8px);
+        }
+    }
+}
